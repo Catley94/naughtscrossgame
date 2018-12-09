@@ -22,18 +22,19 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
 
-const board = [
+const boardData = [
   ['', '', ''],
   ['', '', ''],
   ['', '', '']
 ];
-board[0][0] = 'x';
+
+boardData[0][0] = 'x';
 app.get('/api/board', (req, res) => {
-  res.send(JSON.stringify(board));
+  res.send(JSON.stringify(boardData));
 });
 
 app.get('/api/move', (req, res) => {
-  board[parseInt(req.query.row)][parseInt(req.query.column)] = req.query.player;
+  boardData[parseInt(req.query.row)][parseInt(req.query.column)] = req.query.player;
   res.sendStatus(200);
 });
 

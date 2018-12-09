@@ -6,18 +6,25 @@ const currentTime = document.getElementById("currentTime");
 */
 // declaring a variable that finds the board HTML element by ID.
 
-function playerChoice (choice) {
-  prompt("Please choose your player", "X or O");
+function playerChoice (checkInput) {
+_playerInput = prompt("Please choose your player", "X or O");
 };
-
-if (playerChoice !== 'X' || playerChoice !== 'O') {
-  alert('You have not picked correctly, please try again');
-  playerChoice();
-  } else {
+function checkInput() {
+if (_playerInput == 'X' || _playerInput == 'O') {
+  alert('You have picked ' + _playerInput);
   alert('Let the game begin!');
+  } else {
+  alert('Please try again!');
+  playerChoice();
 }
+};
+const boardData = [
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', '']
+];
 
-const board = document.getElementById('board');
+
 /*
 Function getBoard will call board API endpoint and retrieve the board data.
 */
@@ -38,13 +45,13 @@ function getBoard() {
 /*
 This function will take board data and generate a table from the data.
 */
-function generateBoard(boardData) {
+function generateBoard() {
+  let board = document.getElementById(board);
   let HTML = '<table>'
-  boardData.forEach( function(row, rowIndex) {
+  board.forEach( function(row, rowIndex) {
     HTML += '<tr>'
     row.forEach( function(column, columnIndex) {
       HTML += `<td onclick="handleClick(${rowIndex}, ${columnIndex})">${column}</td>`
-
     })
     HTML += '</tr>'
   })
@@ -59,10 +66,13 @@ function handleClick(rowIndex, columnIndex) {
 
 function playerMove(rowIndex, columnIndex) {
   var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", `/api/move?row=${rowIndex}&column=${columnIndex}&player=${playerChoice}`, true);
+  xhttp.open("GET", `/api/move?row=${rowIndex}&column=${columnIndex}&player=${playerInput}`, true);
   xhttp.send();
 
 };
+
+
+
 playerChoice();
 /*
 Calling the board function
