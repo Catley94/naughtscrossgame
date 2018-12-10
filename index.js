@@ -27,7 +27,6 @@ const board = [
   ['', '', ''],
   ['', '', '']
 ];
-
 board[0][0] = 'x';
 app.get('/api/board', (req, res) => {
   res.send(JSON.stringify(board));
