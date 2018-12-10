@@ -5,7 +5,7 @@ const currentTime = document.getElementById("currentTime");
 //button.addEventListener('click', gettingTime);
 */
 // declaring a variable that finds the board HTML element by ID.
-
+/*
 function playerChoice (choice) {
   prompt("Please choose your player", "X or O");
 };
@@ -16,7 +16,21 @@ if (playerChoice !== 'X' || playerChoice !== 'O') {
   } else {
   alert('Let the game begin!');
 }
-
+*/
+function playerChoice (checkInput) {
+_playerInput = prompt("Please choose your player", "X or O");
+};
+//TODO - Currently _playerInput check does not work for checking correctly.
+function checkInput(_playerInput) {
+if (_playerInput !== 'X' || _playerInput !== 'O') {
+  alert('You have picked ' + _playerInput);
+  alert('Let the game begin!');
+  } else {
+  alert('Please try again!');
+  _playerInput = 0;
+  playerChoice(checkInput);
+}
+};
 const board = document.getElementById('board');
 /*
 Function getBoard will call board API endpoint and retrieve the board data.
@@ -59,7 +73,7 @@ function handleClick(rowIndex, columnIndex) {
 
 function playerMove(rowIndex, columnIndex) {
   var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", `/api/move?row=${rowIndex}&column=${columnIndex}&player=${playerChoice}`, true);
+  xhttp.open("GET", `/api/move?row=${rowIndex}&column=${columnIndex}&player=${_playerInput}`, true);
   xhttp.send();
 
 };
