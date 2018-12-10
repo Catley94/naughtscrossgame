@@ -6,6 +6,7 @@ const currentTime = document.getElementById("currentTime");
 */
 // declaring a variable that finds the board HTML element by ID.
 
+
 function playerChoice (checkInput) {
 _playerInput = prompt("Please choose your player", "X or O");
 };
@@ -45,10 +46,11 @@ function getBoard() {
 /*
 This function will take board data and generate a table from the data.
 */
-function generateBoard() {
-  let board = document.getElementById(board);
+
+function generateBoard(getBoard) {
+  const board1 = document.getElementById(board);
   let HTML = '<table>'
-  board.forEach( function(row, rowIndex) {
+  board1.forEach( function(row, rowIndex) {
     HTML += '<tr>'
     row.forEach( function(column, columnIndex) {
       HTML += `<td onclick="handleClick(${rowIndex}, ${columnIndex})">${column}</td>`
@@ -70,14 +72,16 @@ function playerMove(rowIndex, columnIndex) {
   xhttp.send();
 
 };
-
-
+generateBoard();
 
 playerChoice();
+
+
 /*
 Calling the board function
 */
-getBoard();
+
+
 /*
 //Getting current time in seconds and updates per second
 setInterval(gettingTime, 1000 );
