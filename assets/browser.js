@@ -5,7 +5,7 @@ const currentTime = document.getElementById("currentTime");
 //button.addEventListener('click', gettingTime);
 */
 // declaring a variable that finds the board HTML element by ID.
-
+const board = document.getElementById("board");
 
 function playerChoice (checkInput) {
 _playerInput = prompt("Please choose your player", "X or O");
@@ -19,11 +19,6 @@ if (_playerInput == 'X' || _playerInput == 'O') {
   playerChoice();
 }
 };
-const boardData = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', '']
-];
 
 
 /*
@@ -47,10 +42,10 @@ function getBoard() {
 This function will take board data and generate a table from the data.
 */
 
-function generateBoard(getBoard) {
-  const board1 = document.getElementById(board);
+function generateBoard() {
+
   let HTML = '<table>'
-  board1.forEach( function(row, rowIndex) {
+  board.forEach( function(row, rowIndex) {
     HTML += '<tr>'
     row.forEach( function(column, columnIndex) {
       HTML += `<td onclick="handleClick(${rowIndex}, ${columnIndex})">${column}</td>`
