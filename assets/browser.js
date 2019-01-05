@@ -17,7 +17,7 @@ if (playerChoice !== 'X' || playerChoice !== 'O') {
   alert('Let the game begin!');
 }
 */
-
+/*
 var choiceX = 0;
 var choiceO = 0;
 var classButtonX = document.getElementById("buttonX");
@@ -52,9 +52,9 @@ function chooseO() {
     classButtonX.style.visibility = "hidden";
   }
 };
+*/
 
 
-/*
 function playerChoice (checkInput) {
 _playerInput = prompt("Please choose your player", "X or O");
 };
@@ -69,7 +69,7 @@ if (_playerInput !== "X") {
   alert('You have picked ' + _playerInput + " Let the game begin!");
   }
 };
-*/
+
 const board = document.getElementById('board');
 /*
 Function getBoard will call board API endpoint and retrieve the board data.
@@ -116,8 +116,8 @@ function playerMove(rowIndex, columnIndex) {
   xhttp.send();
 
 };
-//playerChoice();
-//checkInput(_playerInput);
+playerChoice();
+checkInput(_playerInput);
 /*
 Calling the board function
 */
