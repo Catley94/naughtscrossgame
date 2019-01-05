@@ -1,5 +1,5 @@
 html, body {
-  background-color: purple;
+  background-color: white;
 }
 
 td {
@@ -7,4 +7,11 @@ td {
   width: 100px;
   height: 100px;
   text-align: center;
+}
+
+#buttonX {
+  visibility: visible;
+}
+#buttonO {
+  visibility: visible;
 }

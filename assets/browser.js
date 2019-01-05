@@ -17,20 +17,59 @@ if (playerChoice !== 'X' || playerChoice !== 'O') {
   alert('Let the game begin!');
 }
 */
+
+var choiceX = 0;
+var choiceO = 0;
+var classButtonX = document.getElementById("buttonX");
+var classButtonO = document.getElementById("buttonO");
+
+
+function chooseX() {
+  if(choiceX === 0) {
+    choiceX = 1;
+    classButtonX.style.visibility = "hidden";
+    alert("You have chosen X");
+    //var hidden =
+    //Button now visible after pressing if X was chosen
+
+  } else {
+    alert("X has already been chosen, you will be O");
+    choiceO = 1;
+    classButtonO.style.visibility = "hidden";
+  }
+};
+
+function chooseO() {
+  if(choiceO === 0) {
+    choiceO = 1;
+    classButtonO.style.visibility = "hidden";
+    alert("You have chosen O");
+    //Button now visible after pressing if O was chosen
+    classButtonO.style.visibility = "hidden";
+  } else {
+    alert("O has already been chosen, you will be X");
+    choiceX = 1;
+    classButtonX.style.visibility = "hidden";
+  }
+};
+
+
+/*
 function playerChoice (checkInput) {
 _playerInput = prompt("Please choose your player", "X or O");
 };
 //TODO - Currently _playerInput check does not work for checking correctly.
 function checkInput(_playerInput) {
-if (_playerInput !== 'X' || _playerInput !== 'O') {
-  alert('You have picked ' + _playerInput);
-  alert('Let the game begin!');
-  } else {
+if (_playerInput !== "X") {
   alert('Please try again!');
   _playerInput = 0;
   playerChoice(checkInput);
-}
+
+  } else {
+  alert('You have picked ' + _playerInput + " Let the game begin!");
+  }
 };
+*/
 const board = document.getElementById('board');
 /*
 Function getBoard will call board API endpoint and retrieve the board data.
@@ -77,7 +116,8 @@ function playerMove(rowIndex, columnIndex) {
   xhttp.send();
 
 };
-playerChoice();
+//playerChoice();
+//checkInput(_playerInput);
 /*
 Calling the board function
 */
