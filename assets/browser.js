@@ -107,7 +107,7 @@ function generateBoard(boardData) {
 
 function handleClick(rowIndex, columnIndex) {
   playerMove(rowIndex, columnIndex);
-  setTimeout(getBoard, 500);
+  setTimeout(getBoard, 100);
 }
 
 function playerMove(rowIndex, columnIndex) {
@@ -122,7 +122,6 @@ checkInput(_playerInput);
 Calling the board function
 */
 getBoard();
-/*
+
 //Getting current time in seconds and updates per second
-setInterval(gettingTime, 1000 );
-*/
+setInterval(getBoard, 1000 );
