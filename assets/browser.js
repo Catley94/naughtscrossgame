@@ -22,6 +22,8 @@ var choiceX = 0;
 var choiceO = 0;
 var classButtonX = document.getElementById("buttonX");
 var classButtonO = document.getElementById("buttonO");
+var hiddenBoard = document.getElementById("Board").visibility = "hidden";
+var showBoard = document.getElementById("Board").visibility = "hidden";
 
 
 function chooseX() {
