@@ -22,16 +22,28 @@ var choiceX = 0;
 var choiceO = 0;
 var classButtonX = document.getElementById("buttonX");
 var classButtonO = document.getElementById("buttonO");
-var hiddenBoard = document.getElementById("Board").visibility = "hidden";
-var showBoard = document.getElementById("Board").visibility = "hidden";
+/*
+const hiddenBoard = document.getElementById("board").style.visibility = "hidden";
+const showBoard = document.getElementById("board").style.visibility = "hidden";
+*/
+function hideBoard() {
+  document.getElementById("board").style.visibility = "hidden";
+}
 
-
+function showBoard() {
+  document.getElementById("board").style.visibility = "visible";
+}
 function chooseX() {
   if(choiceX === 0) {
   choiceX = 1;
   _playerInput = "X";
+
     classButtonX.style.visibility = "hidden";
+    classButtonO.style.visibility = "hidden";
     alert("You have chosen X");
+    showAlertX();
+    showBoard();
+
     //var hidden =
     //Button now visible after pressing if X was chosen
 
@@ -39,8 +51,27 @@ function chooseX() {
     alert("X has already been chosen, you will be O");
     choiceO = 1;
     _playerInput = "O";
+    showAlertO();
+    showBoard();
     classButtonO.style.visibility = "hidden";
+    classButtonX.style.visibility = "hidden";
   }
+}
+
+function showAlertX() {
+  document.getElementById("AlertX").style.visibility = "visible";
+}
+
+function showAlertO() {
+  document.getElementById("AlertO").style.visibility = "visible";
+}
+
+function hideAlertX() {
+  document.getElementById("AlertX").style.visibility = "hidden";
+}
+
+function hideAlertO() {
+  document.getElementById("AlertO").style.visibility = "hidden";
 }
 
 function chooseO() {
@@ -48,14 +79,21 @@ function chooseO() {
   choiceO = 1;
     _playerInput = "O";
     classButtonO.style.visibility = "hidden";
+    classButtonX.style.visibility = "hidden";
     alert("You have chosen O");
+    showAlertO();
+    showBoard();
+
     //Button now visible after pressing if O was chosen
     classButtonO.style.visibility = "hidden";
   } else {
     alert("O has already been chosen, you will be X");
+    showAlertX();
+    showBoard();
     choiceX = 1;
     _playerInput = "X";
     classButtonX.style.visibility = "hidden";
+    classButtonO.style.visibility = "hidden";
   }
 }
 
@@ -98,7 +136,7 @@ function getBoard() {
 This function will take board data and generate a table from the data.
 */
 function generateBoard(board) {
-  var HTML = '<table>';
+  var HTML = '<table align="center">';
   board.forEach( function(row, rowIndex) {
     HTML += '<tr>';
     row.forEach( function(column, columnIndex) {
@@ -127,7 +165,10 @@ function playerMove(rowIndex, columnIndex) {
 /*
 Calling the board function
 */
+hideAlertX();
+hideAlertO();
 getBoard();
 
+hideBoard();
 //Getting current time in seconds and updates per second
 setInterval(getBoard, 1000 );

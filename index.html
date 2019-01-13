@@ -7,15 +7,26 @@
 </head>
 
 <body>
-  <h1>Hello everyone!</h1>
-  <!--<button id="buttonTime">Get time!</button> -->
+
+  <h1>Play Noughts and Crosses!</h1>
   <div id="board">
 
 
   </div>
+  <div id="AlertX">
+  <h3>You have chosen X</h3>
+  <p>The game begins!</p>
+</div>
+<div id="AlertO">
+<h3>You have chosen O</h3>
+<p>The game begins!</p>
+</div>
+  <!--<button id="buttonTime">Get time!</button> -->
+
   <button id="buttonX" onclick="chooseX()">Choose X</button>
   <button id="buttonO" onclick="chooseO()">Choose O</button>
-  <p>This is a sample webpage</p>
+  <button id="hideBoard" onclick="hideBoard()">Hide Board</button>
+  <button id="showBoard" onclick="showBoard()">Show Board</button>
   <script src="./assets/browser.js">
 
   </script>
