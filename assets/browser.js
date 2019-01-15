@@ -136,7 +136,7 @@ function getBoard() {
 This function will take board data and generate a table from the data.
 */
 function generateBoard(board) {
-  var HTML = '<table align="center">';
+  var HTML = '<table id="boardTable" align="center">';
   board.forEach( function(row, rowIndex) {
     HTML += '<tr>';
     row.forEach( function(column, columnIndex) {
@@ -160,6 +160,19 @@ function playerMove(rowIndex, columnIndex) {
   xhttp.send();
 
 }
+function updateVar() {
+cell1 = boardTable.rows[0].cells[0].innerText;
+cell2 = boardTable.rows[0].cells[1].innerText;
+cell3 = boardTable.rows[0].cells[2].innerText;
+}
+function checkGameOver() {
+  updateVar()
+  if(cell1 === cell2 && cell2 === cell3) {
+    alert('Game over!')
+  } else {
+    alert('Game Continues!')
+  }
+}
 
 //checkInput(_playerInput);
 /*
@@ -172,3 +185,7 @@ getBoard();
 hideBoard();
 //Getting current time in seconds and updates per second
 setInterval(getBoard, 1000 );
+
+var cell1 = boardTable.rows[0].cells[0].innerText;
+var cell2 = boardTable.rows[0].cells[1].innerText;
+var cell3 = boardTable.rows[0].cells[2].innerText;
