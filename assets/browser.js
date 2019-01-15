@@ -131,6 +131,7 @@ function getBoard() {
   };
   xhttp.open("GET", "/api/board", true);
   xhttp.send();
+  checkGameOver();
 }
 /*
 This function will take board data and generate a table from the data.
@@ -152,26 +153,68 @@ function generateBoard(board) {
 function handleClick(rowIndex, columnIndex) {
   playerMove(rowIndex, columnIndex);
   setTimeout(getBoard, 100);
+  //setTimeout(checkGameOver, 100);
 }
 
 function playerMove(rowIndex, columnIndex) {
+
   var xhttp = new XMLHttpRequest();
   xhttp.open("GET", `/api/move?row=${rowIndex}&column=${columnIndex}&player=${_playerInput}`, true);
   xhttp.send();
 
+
 }
-function updateVar() {
+function updateCellsVar() {
 cell1 = boardTable.rows[0].cells[0].innerText;
 cell2 = boardTable.rows[0].cells[1].innerText;
 cell3 = boardTable.rows[0].cells[2].innerText;
+cell4 = boardTable.rows[1].cells[0].innerText;
+cell5 = boardTable.rows[1].cells[1].innerText;
+cell6 = boardTable.rows[1].cells[2].innerText;
+cell7 = boardTable.rows[2].cells[0].innerText;
+cell8 = boardTable.rows[2].cells[1].innerText;
+cell9 = boardTable.rows[2].cells[2].innerText;
+
+cells123 = cell1 + cell2 + cell3;
+cells456 = cell4 + cell5 + cell6;
+cells789 = cell7 + cell8 + cell9;
 }
 function checkGameOver() {
-  updateVar()
-  if(cell1 === cell2 && cell2 === cell3) {
-    alert('Game over!')
+  updateCellsVar();
+  /*
+  if(cell1 === "" ||
+      cell2 === "" ||
+        cell3 === "" ||
+          cell4 === "" ||
+            cell5 === "" ||
+              cell6 === "" ||
+                cell7 === "" ||
+                  cell8 === "" ||
+                    cell9 === "" ||) {
+                      console.log('Waiting for someone to win')
+
+                    } else {
+
+}
+*/
+/*
+if(cell1 === cell2 && cell2 === cell3 ||
+    cell4 === cell5 && cell5 === cell6 ||
+      cell7 === cell8 && cell8 === cell9 ||
+        cell1 === cell4 && cell4 === cell7 ||
+          cell2 === cell5 && cell5 === cell8 ||
+            cell3 === cell6 && cell6 === cell9 ||
+              cell1 === cell5 && cell5 === cell9 ||
+                cell3 === cell5 && cell5 === cell7)
+                */
+   if(cells123 === "XXX" || cells123 === "OOO" ||
+      cells456 === "XXX" || cells456 === "OOO" ||
+        cells789 === "XXX" || cells789 === "OOO") {
+    alert('Game over!');
   } else {
-    alert('Game Continues!')
+    console.log('Game Continues!');
   }
+
 }
 
 //checkInput(_playerInput);
@@ -189,3 +232,9 @@ setInterval(getBoard, 1000 );
 var cell1 = boardTable.rows[0].cells[0].innerText;
 var cell2 = boardTable.rows[0].cells[1].innerText;
 var cell3 = boardTable.rows[0].cells[2].innerText;
+var cell4 = boardTable.rows[1].cells[0].innerText;
+var cell5 = boardTable.rows[1].cells[1].innerText;
+var cell6 = boardTable.rows[1].cells[2].innerText;
+var cell7 = boardTable.rows[2].cells[0].innerText;
+var cell8 = boardTable.rows[2].cells[1].innerText;
+var cell9 = boardTable.rows[2].cells[2].innerText;
