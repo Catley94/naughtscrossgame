@@ -1,17 +1,58 @@
 html, body {
   background-color: white;
+  text-align: center;
+
+
+}
+
+table {
+
+  text-align: center;
+  font-size: 40px;
+  color:grey;
+  table-layout: fixed;
 }
 
 td {
-  border: 1px solid blue;
+  border: 3px solid grey;
+  border-radius: 25px;
+  table-layout: fixed;
   width: 100px;
   height: 100px;
-  text-align: center;
 }
-
 #buttonX {
+  background-color: white;
+  border-radius: 12px;
   visibility: visible;
+  padding: 16px 16px;
+}
+#buttonX:hover {
+  background-color: #ffa814;
 }
 #buttonO {
+  background-color: white;
+  border-radius: 12px;
   visibility: visible;
+  padding: 16px 16px;
+}
+#buttonO:hover {
+  background-color: #ffa814;
+}
+
+
+td:hover {background-color: #ffa814;}
+
+
+
+#AlertX{
+  border-radius: 12px;
+  background-color: #5ad4fc;
+  color: white;
+  text-align: center;
+}
+#AlertO{
+  border-radius: 12px;
+  background-color: #5ad4fc;
+  color: white;
+  text-align: center;
 }
