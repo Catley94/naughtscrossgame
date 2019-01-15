@@ -6,7 +6,7 @@
 
 </head>
 
-<body>
+<body onload="hideBoard()">
 
   <h1>Play Noughts and Crosses!</h1>
   <div id="board">
@@ -27,7 +27,10 @@
   <button id="buttonO" onclick="chooseO()">Choose O</button>
   <button id="hideBoard" onclick="hideBoard()">Hide Board</button>
   <button id="showBoard" onclick="showBoard()">Show Board</button>
+  <button id="startRefreshB" onclick="startRefresh()">Start Refresh</button>
+  <button id="stopRefreshB" onclick="stopRefresh()">Stop Refresh</button>
   <script src="./assets/browser.js">
+
 
   </script>
 </body>
