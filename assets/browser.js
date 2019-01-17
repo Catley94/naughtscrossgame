@@ -181,24 +181,46 @@ if statement checks all possibilities for winning (3 X's or O's in a row, in any
 if the statement returns true, it means the game is over, so returns an alert with "Game Over!"
 if the statement returns false, it will write to the console "Game Continues!", this is for development purposes,
 to show the timer working.
+Added on feature for game drawn, looks at the legth of "allCells" if 9, all cells have been used.
+If all cells have been used and it does not equal to a win or lose, it must be a draw.
 */
 function checkGameOver() {
   updateCellsVar();
-
-   if(cells123 === "XXX" || cells123 === "OOO" ||
-      cells456 === "XXX" || cells456 === "OOO" ||
-        cells789 === "XXX" || cells789 === "OOO" ||
-          cells147 === "XXX" || cells147 === "OOO" ||
-            cells258 === "XXX" || cells258 === "OOO" ||
-              cells369 === "XXX" || cells369 === "OOO" ||
-                cells159 === "XXX" || cells159 === "OOO" ||
-                  cells357 === "XXX" || cells357 === "OOO") {
+var allCells = cell1 + cell2 + cell3 + cell4 + cell5 + cell6 + cell7 + cell8 + cell9;
+   if(cells123 === "XXX" ||
+      cells456 === "XXX" ||
+        cells789 === "XXX" ||
+          cells147 === "XXX" ||
+            cells258 === "XXX" ||
+              cells369 === "XXX" ||
+                cells159 === "XXX" ||
+                  cells357 === "XXX" || ) {
+    //Add the "Player's choice onto message, such as: Player X won!"
     alert('Game over!');
+    stopRefresh();
+    hideBoard();
+  } else if(cells123 === "OOO" ||
+              cells456 === "OOO" ||
+                cells789 === "OOO" ||
+                  cells147 === "OOO" ||
+                    cells258 === "OOO" ||
+                  cells369 === "OOO" ||
+                cells159 === "OOO" ||
+                cells357 === "OOO" {
+
+  } else if(allCells.length === 9) {
+    alert('Game Drawn!')
+    stopRefresh();
+    hideBoard();
   } else {
-    console.log('Game Continues!');
+    console.log('Refreshing per second');
   }
 
+
+
 }
+
+
 //Function that triggers setInterval, also clears the refresh variable first so not to stack refresh rate.
 function startRefresh() {
 clearInterval(refresh);
@@ -242,6 +264,7 @@ var cells258 = cell2 + cell5 + cell8;
 var cells369 = cell3 + cell6 + cell9;
 var cells159 = cell1 + cell5 + cell9;
 var cells357 = cell3 + cell5 + cell7;
+
 
 
 /*
