@@ -1,5 +1,5 @@
 html, body {
-  background-color: white;
+  background-color: lightgray;
   text-align: center;
 
 
@@ -20,11 +20,49 @@ td {
   width: 100px;
   height: 100px;
 }
+
+#choices {
+  position:relative;
+  top: 50px;
+  left: -350px;
+
+
+}
+
+#hideBoard {
+position:relative;
+  top: -300px;
+  left: 500px;
+}
+
+#showBoard {
+position:relative;
+  top: -250px;
+  left: 410px;
+}
+
+#startRefreshB {
+position:relative;
+  top: -200px;
+  left: 315px;
+}
+
+#stopRefreshB {
+position:relative;
+  top: -150px;
+  left: 217px;
+}
+
 #buttonX {
   background-color: white;
   border-radius: 12px;
   visibility: visible;
   padding: 16px 16px;
+  position:relative;
+  top: -430px;
+  left: -300px;
+  right: -420px;
+  bottom: -191px;
 }
 #buttonX:hover {
   background-color: #ffa814;
@@ -34,6 +72,11 @@ td {
   border-radius: 12px;
   visibility: visible;
   padding: 16px 16px;
+  position:relative;
+  top: -330px;
+  left: -397px;
+  right: -420px;
+  bottom: -191px;
 }
 #buttonO:hover {
   background-color: #ffa814;

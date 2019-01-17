@@ -6,12 +6,18 @@
 
 </head>
 
-<body onload="hideBoard()">
+<body>
 
   <h1>Play Noughts and Crosses!</h1>
+  <h2 id="choices">Choose X or O!</h2>
   <div id="board">
 
-
+  </div>
+  <div id="devbuttons">
+    <button id="hideBoard" onclick="hideBoard()">Hide Board</button>
+    <button id="showBoard" onclick="showBoard()">Show Board</button>
+    <button id="startRefreshB" onclick="startRefresh()">Start Refresh</button>
+    <button id="stopRefreshB" onclick="stopRefresh()">Stop Refresh</button>
   </div>
   <div id="AlertX">
   <h3>You have chosen X</h3>
@@ -25,10 +31,7 @@
 
   <button id="buttonX" onclick="chooseX()">Choose X</button>
   <button id="buttonO" onclick="chooseO()">Choose O</button>
-  <button id="hideBoard" onclick="hideBoard()">Hide Board</button>
-  <button id="showBoard" onclick="showBoard()">Show Board</button>
-  <button id="startRefreshB" onclick="startRefresh()">Start Refresh</button>
-  <button id="stopRefreshB" onclick="stopRefresh()">Stop Refresh</button>
+
   <script src="./assets/browser.js">
 
 

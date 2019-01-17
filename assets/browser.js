@@ -194,7 +194,7 @@ var allCells = cell1 + cell2 + cell3 + cell4 + cell5 + cell6 + cell7 + cell8 + c
             cells258 === "XXX" ||
               cells369 === "XXX" ||
                 cells159 === "XXX" ||
-                  cells357 === "XXX" || ) {
+                  cells357 === "XXX") {
     //Add the "Player's choice onto message, such as: Player X won!"
     alert('Game over!');
     stopRefresh();
@@ -204,17 +204,17 @@ var allCells = cell1 + cell2 + cell3 + cell4 + cell5 + cell6 + cell7 + cell8 + c
                 cells789 === "OOO" ||
                   cells147 === "OOO" ||
                     cells258 === "OOO" ||
-                  cells369 === "OOO" ||
-                cells159 === "OOO" ||
-                cells357 === "OOO" {
+                      cells369 === "OOO" ||
+                        cells159 === "OOO" ||
+                          cells357 === "OOO") {
 
   } else if(allCells.length === 9) {
-    alert('Game Drawn!')
+    alert('Game Drawn!');
     stopRefresh();
     hideBoard();
   } else {
     console.log('Refreshing per second');
-  }
+}
 
 
 
