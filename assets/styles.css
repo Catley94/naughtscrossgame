@@ -30,27 +30,59 @@ td {
 }
 
 #hideBoard {
+  background-color: white;
+  border-radius: 12px;
+  visibility: visible;
+  padding: 16px 16px;
 position:relative;
   top: -300px;
   left: 500px;
 }
 
+#hideBoard:hover {
+  background-color: #ffa814;
+}
+
 #showBoard {
+  background-color: white;
+  border-radius: 12px;
+  visibility: visible;
+  padding: 16px 15px;
 position:relative;
   top: -250px;
-  left: 410px;
+  left: 401px;
+}
+
+#showBoard:hover {
+  background-color: #ffa814;
 }
 
 #startRefreshB {
+  background-color: white;
+  border-radius: 12px;
+  visibility: visible;
+  padding: 16px 12px;
 position:relative;
   top: -200px;
-  left: 315px;
+  left: 301px;
+}
+
+#startRefreshB:hover {
+  background-color: #ffa814;
 }
 
 #stopRefreshB {
+  background-color: white;
+  border-radius: 12px;
+  visibility: visible;
+  padding: 16px 13px;
 position:relative;
   top: -150px;
-  left: 217px;
+  left: 200px;
+}
+
+#stopRefreshB:hover {
+  background-color: #ffa814;
 }
 
 #buttonX {
@@ -59,8 +91,8 @@ position:relative;
   visibility: visible;
   padding: 16px 16px;
   position:relative;
-  top: -430px;
-  left: -300px;
+  top: -500px;
+  left: -310px;
   right: -420px;
   bottom: -191px;
 }
@@ -73,8 +105,8 @@ position:relative;
   visibility: visible;
   padding: 16px 16px;
   position:relative;
-  top: -330px;
-  left: -397px;
+  top: -440px;
+  left: -402px;
   right: -420px;
   bottom: -191px;
 }

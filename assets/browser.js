@@ -7,6 +7,8 @@ var classButtonX = document.getElementById("buttonX");
 //Variable classButtonO is finding the element by id of ButtonO
 var classButtonO = document.getElementById("buttonO");
 
+//
+var choicesText = document.getElementById("choices");
 //Function hides board, before game and after game has been won.
 function hideBoard() {
   document.getElementById("board").style.visibility = "hidden";
@@ -29,6 +31,7 @@ function chooseX() {
 
     classButtonX.style.visibility = "hidden";
     classButtonO.style.visibility = "hidden";
+    choicesText.style.visibility = "hidden";
     alert("You have chosen X");
     showAlertX();
     showBoard();
@@ -44,6 +47,7 @@ function chooseX() {
     showBoard();
     classButtonO.style.visibility = "hidden";
     classButtonX.style.visibility = "hidden";
+    choicesText.style.visibility = "hidden";
   }
 }
 //Shows AlertX, displays after choosing X, to remind player of which character they had chosen.
@@ -74,6 +78,7 @@ function chooseO() {
     _playerInput = "O";
     classButtonO.style.visibility = "hidden";
     classButtonX.style.visibility = "hidden";
+    choicesText.style.visibility = "hidden";
     alert("You have chosen O");
     showAlertO();
     showBoard();
@@ -88,6 +93,7 @@ function chooseO() {
     _playerInput = "X";
     classButtonX.style.visibility = "hidden";
     classButtonO.style.visibility = "hidden";
+    choicesText.style.visibility = "hidden";
   }
 }
 
